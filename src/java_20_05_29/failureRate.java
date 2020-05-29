@@ -7,7 +7,7 @@ public class failureRate {
 		int N = 5;
 		int[] stages = { 2, 1, 2, 6, 2, 4, 3, 3 };
 		int[] fail = new int[N];
-		double[] failRate = new double[N];
+		List<Double> failRate = new ArrayList<Double>();
 		int clearStatges = stages.length;
 		int[] answer = new int[N];
 		for (int i = 0; i < N; i++) {
@@ -17,13 +17,22 @@ public class failureRate {
 			if (stages[i] <= N)
 				fail[stages[i] - 1] = fail[stages[i] - 1] + 1;
 		}
-		Set<Double> set = new HashSet<Double>();
+
 		for (int i = 0; i < N; i++) {
-			set.add((double) (fail[i]) / clearStatges);
-			clearStatges -= fail[i];
+			if (fail[i] == 0) {
+				failRate.add(0.0);
+			} else {
+				failRate.add((double) (fail[i]) / clearStatges);
+				clearStatges -= fail[i];
+			}
+		}
+		System.out.println("failRate = " + failRate);
+		for (int i = 0; i < N; i++) {
+			double max = Collections.max(failRate);
+			answer[i] = failRate.indexOf(max) + 1;
+			failRate.set(answer[i] - 1, -1.0);
 		}
 		System.out.println("answer = " + Arrays.toString(answer));
 		System.out.println("fail = " + Arrays.toString(fail));
-		System.out.println("failRate = " + Arrays.toString(failRate));
 	}
 }
