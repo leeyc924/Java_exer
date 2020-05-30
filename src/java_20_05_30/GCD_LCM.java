@@ -11,7 +11,7 @@ public class GCD_LCM {
 		if (n < m) {
 			n = tmp2;
 			m = tmp1;
-		}
+		} 
 		while (r > 0) {
 			r = n % m;
 			n = m;
