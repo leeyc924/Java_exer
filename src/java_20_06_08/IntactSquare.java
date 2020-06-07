@@ -14,6 +14,6 @@ public class IntactSquare {
 			small = nmg;
 		}
 		answer = ((long) w * (long) h) - ((long) w + (long) h - big);
-		System.out.println(answer);
+		System.out.println(answer); 
 	}
 }
