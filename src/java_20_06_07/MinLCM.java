@@ -1,7 +1,5 @@
 package java_20_06_07;
 
-import java.util.*;
-
 public class MinLCM {
 	public static int solution(int[] arr) {
 		int answer = arr[0];
