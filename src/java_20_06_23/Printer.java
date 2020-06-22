@@ -2,7 +2,7 @@ package java_20_06_23;
 
 import java.util.*;
 
-public class Printer {
+public class Printer { 
 	public static void main(String[] args) {
 		int[] priorities = { 2, 1, 3, 2 };
 		int location = 2;
